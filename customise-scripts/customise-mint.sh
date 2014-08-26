@@ -2,7 +2,7 @@
 
 sudo apt-get install ubuntu-restricted-extras -y
 sudo apt-get install ubuntu-restricted-addons -y
-sudo apt-get install vim mc htop sysstat -y
+sudo apt-get install vim mc htop sysstat git-cola -y
 
 ## - Set Up the GIT Environment
 
