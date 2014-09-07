@@ -4,7 +4,7 @@
 "cm_version": "",
 "cleanup_pause": "",
 "headless": "",
-"iso_url": "http://192.168.2.250/software/centos/7.0/CentOS-7.0-1406-x86_64-EVERYTHING.iso",
+"iso_url": "http://192.168.2.250/software/centos/7.0/CentOS-7.0-1406-x86_64-Everything.iso",
 "iso_checksum": "a800ed4b00a612346aaf599ebf36a8101472303e",
 "update": "false",
 "http_proxy": "{{env `http_proxy`}}",
