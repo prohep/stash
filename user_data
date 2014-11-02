@@ -1,0 +1,37 @@
+#cloud-config
+hostname: docker02
+
+coreos:
+    etcd:
+        name: docker02
+        discovery: "https://discovery.etcd.io/cc351f43d21abc102a6603aec4387e10"
+        addr: 192.168.2.92:4001
+        peer-addr: 192.168.2.92:7001
+
+    units:
+      - name: systemd-networkd.service
+        command: start
+      - name: etcd.service
+        command: start
+      - name: fleet.service
+        command: start
+
+write_files:
+    - path: /etc/systemd/network/static.network
+      permissions: 0644
+      content: |
+        [Match]
+        Name=ens33
+
+        [Network]
+        Address=192.168.2.92/24
+        Gateway=192.168.2.1
+        DNS=192.168.2.1
+        DNS=8.8.8.8
+        DNS=8.8.4.4
+
+    - path: /etc/motd
+      permissions: 0644
+      owner: root
+      content: |
+        This is the docker02 node!
